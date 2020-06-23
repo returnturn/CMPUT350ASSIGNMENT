@@ -1,0 +1,25 @@
+#include "Marine.h"
+
+// ... implement
+
+Marine::Marine(Team team, const Vec2 &pos, AttackPolicy pol, bool _bounce)
+  : Unit(team, pos, 10, 40, 10, 1, 45){
+    policy = pol;
+    bounce = _bounce;
+}
+
+void Marine::act(World &w){
+  if(policy == ATTACK_WEAKEST && w.random_weakest_target(*this)!=NULL){
+    w.attack(*this, w.random_weakest_target(*this));
+  }
+  else if(policy == ATTACK_CLOSEST && w.random_closest_target(*this)!=NULL){
+    w.attack(*this, w.random_closest_target(*this));
+  }
+  else if(policy == ATTACK_MOST_DANGEROUS && w.random_most_dangerous_target(*this)!=NULL){
+    w.attack(*this, w.random_most_dangerous_target(*this));
+  }
+}
+
+void Marine::collision_hook(double prev_speed, bool collisions[4]){
+  
+    

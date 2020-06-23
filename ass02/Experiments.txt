@@ -1,0 +1,44 @@
+Describe your experimental setup and your results.
+
+				win
+ATTACK_WEAKEST			
+ATTACK_CLOSEST			
+ATTACK_MOST_DANGEROUS		800/800
+
+20 units:
+	[RED]		  [BLUE]
+1. ATTACK_WEAKEST vs. ATTACK_CLOSEST
+   win:	  38	  :        62
+2. ATTACK_WEAKEST vs. ATTACK_MOST_DANGEROUS
+   win:	  0      :        100
+3. ATTACK_CLOSEST vs. ATTACK_MOST_DANGEROUS
+   win:	 0      :         100
+
+50 units:
+	[RED]		  [BLUE]
+1. ATTACK_WEAKEST vs. ATTACK_CLOSEST
+   win:	  100	  :        0
+2. ATTACK_WEAKEST vs. ATTACK_MOST_DANGEROUS
+   win:	  0      :        100
+3. ATTACK_CLOSEST vs. ATTACK_MOST_DANGEROUS
+   win:	 0      :         100
+
+100 units:
+	[RED]		  [BLUE]
+1. ATTACK_WEAKEST vs. ATTACK_CLOSEST
+   win:	  100	  :        0
+2. ATTACK_WEAKEST vs. ATTACK_MOST_DANGEROUS
+   win:	  0      :        100
+3. ATTACK_CLOSEST vs. ATTACK_MOST_DANGEROUS
+   win:	 0      :         100
+
+300 units:
+	[RED]		  [BLUE]
+1. ATTACK_WEAKEST vs. ATTACK_CLOSEST
+   win:	  0	  :        100
+2. ATTACK_WEAKEST vs. ATTACK_MOST_DANGEROUS
+   win:	  0      :        100
+3. ATTACK_CLOSEST vs. ATTACK_MOST_DANGEROUS
+   win:	 0      :         100
+
+ATTACK_MOST_DANGEROUS > ATTACK_WEAKEST > ATTACK_CLOSEST

@@ -1,0 +1,114 @@
+#ifndef Set_H
+#define Set_H
+
+#include <iostream>
+#include <cstdlib>
+
+// represents a set of integers 0..n-1
+
+class Set
+{
+ public:
+
+  Set(size_t n_){
+    // create empty subset of {0..n-1}
+    n=n_;
+    a=n/32;
+    if(n%32){
+      a++;
+    }
+    bits = new unsigned int[a];
+    clear();
+  }
+  ~Set(){
+    // destructor
+    delete []bits;
+  }
+  Set(const Set &s){
+    // copy constructor
+    bits=s.bits;
+    n=s.n;
+    a=s.a;
+  }
+  Set &operator=(const Set &s){
+    // assignment operator
+    if(this==&s){
+      return *this;
+    }
+    bits=s.bits;
+    n=s.n;
+    a=s.a;
+    return *this;
+  }
+
+  void clear(){
+    // empty set
+    for(size_t i=0;i<a;i++){
+      bits[i]=0;
+    }
+  }
+  /*void complement(){
+    // negate set (x was in set before <=> x is not in set after)
+    for(int i=0;i<n;i++){
+      if(bits[i]){
+	bits[i]=0;
+      }
+      else{
+	bits[i]=1;
+      }
+    }
+  }
+  bool has(size_t x) const{
+    // return true iff x is element of set (0 <= x < n)
+    return bits[x];
+  }
+  void add(size_t x){
+    // add element x to set (0 <= x < n)
+    bits[x]=1;
+  }
+  void remove(size_t x){
+    // remove element x from set (0 <= x < n)
+    bits[x]=0;
+  }
+
+  // add all elements of s to set; pre-cond: s.n == n
+  void add(const Set &s){
+    for(int i=0;i<n;i++){
+      if(s.bits[i]&&!bits[i]){
+	bits[i]=1;
+      }
+    }
+  }
+
+  // remove all elements of s from set; pre-cond: s.n == n
+  void remove(const Set &s){
+    for(int i=0;i<n;i++){
+      if(s.bits[i]&&bits[i]){
+	bits[i]=0;
+      }
+    }
+  }
+
+  // return maximum number of elements
+  size_t get_n() const { return n; }
+
+  // print elements to output stream os (default std::cout) like so:
+  // [ 1 2 4 5 ]
+  // for set {1,2,4,5} (no extra spaces, no newline characters)
+  void print(std::ostream &os = std::cout) const{
+    for(int i=0;i<n;i++){
+      os<<bits[i]<<" ";
+    }
+    }*/
+
+ private:
+
+  unsigned int *bits; // array of integers storing bits (x in set <=> bit x = 1)
+  size_t n;  // max. number of elements (elements are 0,1,...n-1)
+  size_t a;  // number of allocated ints
+  //static const INT_BITS=sizeof(int)*8;
+  // you may add private helper functions here, or *constant* data,
+  // but no other member functions or data or function implementations
+};
+
+#endif
