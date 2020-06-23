@@ -1,7 +1,7 @@
 CMPUT 350  Assignment 3
 -----------------------
 
-Student Id:
+Student Id:  1506669
             ----------------
 
 
@@ -21,5 +21,5 @@ contributed:
 Your name in lieu of a signature:
 
 
-
+		Leo Hong
            -----------------------
